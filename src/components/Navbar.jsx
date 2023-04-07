@@ -13,7 +13,7 @@ export default function Navbar() {
     setOpen(!open);
   };
   return (
-    <div className="w-full h-full max-h-[50px] md:max-h-none">
+    <div className="w-full max-h-[50px] md:max-h-none">
       <section className="max-w-[250px] md:flex hidden w-full min-h-full bg-cover bg-[url('/public/img/sidebar.png')]">
         <ul className="mt-16 mx-4">
           <li className="flex">
