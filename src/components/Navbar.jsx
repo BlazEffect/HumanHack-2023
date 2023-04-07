@@ -60,7 +60,7 @@ export default function Navbar() {
           </li>
         </ul>
       </section>
-      <section className="px-[15px] flex max-h-[60px] h-full items-center md:hidden min-w-full bg-[#70B839] opacity-80">
+      <section className="px-[15px] flex h-[50px] items-center md:hidden min-w-full bg-[#70B839] opacity-80">
         <img
           onClick={handleClick}
           src={open ? "/img/close.png" : "/img/burger.png"}
@@ -83,10 +83,13 @@ export default function Navbar() {
               Математика
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
-              <Link to='/draw'>Правописание</Link>
+              <>Правописание</>
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
-              Рисование
+              <Link to='/draw'>Рисование</Link>
+            </li>
+            <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
+              <Link to="/pictures">Рисунки</Link>
             </li>
           </ul>
         </nav>

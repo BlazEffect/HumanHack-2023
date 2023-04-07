@@ -1,81 +1,47 @@
-import { React } from 'react';
-import { Stage, Layer, Line } from 'react-konva';
-import { useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-const DrawingArea = ({onClearLines, clearLines}) => {
-
-    const [lines, setLines] = useState([]);
-    const isDrawing = useRef(false);
-    const stageArea = useRef(null);
-
+const styles = {
+    canvas: {
+      width: "100vw",
+      height: "100vh",
+      cursor: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✍️</text></svg>") 5 25,auto`
+    }
+  };
+export default function DrawingArea ()  {
+    const [customWidth, setCustomWidth] = useState(window.screen.width);
     useEffect(() => {
-        //loadImage();
-    }, [clearLines])
-    
-    const handleMouseDown = (e) => {
-        isDrawing.current = true;
-        const pos = e.target.getStage().getPointerPosition();
-        setLines([...lines, { points: [pos.x, pos.y] }]);
-    };
-    
-    const handleMouseMove = (e) => {
-        // no drawing - skipping
-        if (!isDrawing.current) {
-          return;
-        }
-        const stage = e.target.getStage();
-        const point = stage.getPointerPosition();
-    
-        // To draw line
-        let lastLine = lines[lines.length - 1];
+        window.addEventListener('resize', ()=> {
+            setCustomWidth(window.screen.width)
+        });
         
-        if(lastLine) {
-            // add point
-            lastLine.points = lastLine.points.concat([point.x, point.y]);
-                
-            // replace last
-            lines.splice(lines.length - 1, 1, lastLine);
-            setLines(lines.concat());
+        const canvas = document.querySelector('#sketchpad')
+        let context = canvas.getContext('2d');
+        let isIdle = true;
+        function drawstart(event) {
+          context.beginPath();
+          context.moveTo(event.pageX - canvas.offsetLeft, event.pageY - canvas.offsetTop);
+          isIdle = false;
         }
-        
-    };
-    
-    const handleMouseUp = () => {
-        isDrawing.current = false;
-    };
-
-    return (
-        <div className=" text-center text-dark">
-            <Stage
-                width={300}
-                height={300}
-                ref={stageArea}
-                onMouseDown={handleMouseDown}
-                onPointerDown={handleMouseDown}
-                onMousemove={handleMouseMove}
-                onPointerMove={handleMouseMove}
-                onMouseup={handleMouseUp}
-                onPointerUp={handleMouseUp}
-                className="canvas-stage max-h-[500px]"
-            >
-                <Layer>
-                    {lines.map((line, i) => (
-                        <Line
-                        key={i}
-                        points={line.points}
-                        stroke="#df4b26"
-                        strokeWidth={2}
-                        tension={0.5}
-                        lineCap="round"
-                        globalCompositeOperation={
-                            line.tool === 'eraser' ? 'destination-out' : 'source-over'
-                        }
-                        />
-                    ))}
-                </Layer>
-            </Stage>
-        </div>
-    )
-}
-
-export default DrawingArea
+        function drawmove(event) {
+          if (isIdle) return;
+          context.lineTo(event.pageX - canvas.offsetLeft, event.pageY - canvas.offsetTop);
+          context.stroke();
+        }
+        function drawend(event) {
+          if (isIdle) return;
+          drawmove(event);
+          isIdle = true;
+        }
+        function touchstart(event) { drawstart(event.touches[0]) }
+        function touchmove(event) { drawmove(event.touches[0]); event.preventDefault(); }
+        function touchend(event) { drawend(event.changedTouches[0]) }
+        canvas.addEventListener('touchstart', touchstart, false);
+        canvas.addEventListener('touchmove', touchmove, false);
+        canvas.addEventListener('touchend', touchend, false);
+        canvas.addEventListener('mousedown', drawstart, false);
+        canvas.addEventListener('mousemove', drawmove, false);
+        canvas.addEventListener('mouseup', drawend, false);
+    });
+  
+    return <canvas id='sketchpad' className='border-black max-w-full' width={customWidth} height='400'/>;
+};
