@@ -4,6 +4,7 @@ import aIcon from "/public/img/Group 68.png";
 import mushrooms from "/public/img/mushroom-filled.png";
 import { useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const nav = useRef(null);
@@ -12,7 +13,7 @@ export default function Navbar() {
     setOpen(!open);
   };
   return (
-    <div className="w-full">
+    <div className="w-full max-h-[50px] md:max-h-none">
       <section className="max-w-[250px] md:flex hidden w-full min-h-full bg-cover bg-[url('/public/img/sidebar.png')]">
         <ul className="mt-16 mx-4">
           <li className="flex">
@@ -59,11 +60,11 @@ export default function Navbar() {
           </li>
         </ul>
       </section>
-      <section className="px-[15px] py-2 md:hidden min-w-full bg-[#70B839] opacity-80">
+      <section className="px-[15px] flex max-h-[60px] h-full items-center md:hidden min-w-full bg-[#70B839] opacity-80">
         <img
           onClick={handleClick}
           src={open ? "/img/close.png" : "/img/burger.png"}
-          className="cursor-pointer"
+          className="cursor-pointer max-h-[32px] max-w-[32px]"
           alt="Открыть меню"
         />
       </section>
@@ -82,7 +83,7 @@ export default function Navbar() {
               Математика
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
-              Правописание
+              <Link to='/draw'>Правописание</Link>
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
               Рисование

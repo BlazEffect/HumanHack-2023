@@ -5,7 +5,7 @@ export default function Layout({ children }) {
     return (
         <section className="md:mx-4 h-full flex flex-col">
             <Navbar />
-            {children}
+            <div>{children}</div>
         </section>
     )
 }
