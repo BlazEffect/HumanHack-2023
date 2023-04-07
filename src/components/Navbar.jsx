@@ -10,7 +10,7 @@ export default function Navbar() {
   };
   return (
     <div className="">
-      <section className="max-w-[250px] xs:block hidden w-full min-h-full bg-[url('/public/img/sidebar.png')]">
+      <section className="max-w-[250px] xs:flex hidden w-full min-h-full bg-cover bg-[url('/public/img/sidebar.png')]">
         <ul className="mt-16 mx-4">
           <li className="flex">
             <div className="bg-[#58AA2C] p-2 rounded-[10px]">
