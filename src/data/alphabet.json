@@ -5,23 +5,23 @@
     "items": [
       {
         "word": "ёж",
-        "imageName": ""
+        "imageName": "hedgehog.jpg"
       },
       {
         "word": "кот",
-        "imageName": ""
+        "imageName": "cat.jpg"
       },
       {
         "word": "корова",
-        "imageName": ""
+        "imageName": "cow.jpg"
       },
       {
         "word": "як",
-        "imageName": ""
+        "imageName": "yak.jpg"
       },
       {
         "word": "осёл",
-        "imageName": ""
+        "imageName": "donkey.jpg"
       }
     ]
   },
