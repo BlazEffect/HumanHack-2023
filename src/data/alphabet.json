@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Animals",
+    "maxLevels": 5,
+    "items": [
+      {
+        "word": "ёж",
+        "imageName": ""
+      },
+      {
+        "word": "кот",
+        "imageName": ""
+      },
+      {
+        "word": "корова",
+        "imageName": ""
+      },
+      {
+        "word": "як",
+        "imageName": ""
+      },
+      {
+        "word": "осёл",
+        "imageName": ""
+      }
+    ]
+  },
+  {
+    "name": "Food",
+    "maxLevels": 3,
+    "items": [
+      {
+        "word": "чипсы",
+        "imageName": ""
+      },
+      {
+        "word": "дошик",
+        "imageName": ""
+      },
+      {
+        "word": "конфеты",
+        "imageName": ""
+      },
+      {
+        "word": "картошка",
+        "imageName": ""
+      },
+      {
+        "word": "салат",
+        "imageName": ""
+      }
+    ]
+  },
+  {
+    "name": "Berries",
+    "maxLevels": 4,
+    "items": [
+      {
+        "word": "малина",
+        "imageName": ""
+      },
+      {
+        "word": "клубника",
+        "imageName": ""
+      },
+      {
+        "word": "черника",
+        "imageName": ""
+      },
+      {
+        "word": "яблоко",
+        "imageName": ""
+      }
+    ]
+  }
+]
