@@ -4,6 +4,9 @@ import { RouterProvider } from 'react-router-dom'
 import router from './router'
 import './index.css'
 
+const vh = window.innerHeight / 100;
+document.documentElement.style.setProperty('--vh', `${vh}px`)
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />

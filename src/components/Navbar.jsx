@@ -9,7 +9,7 @@ export default function Navbar() {
     setOpen(!open);
   };
   return (
-    <div className="">
+    <div className="w-full h-full">
       <section className="max-w-[250px] xs:flex hidden w-full min-h-full bg-cover bg-[url('/public/img/sidebar.png')]">
         <ul className="mt-16 mx-4">
           <li className="flex">
@@ -56,19 +56,21 @@ export default function Navbar() {
           </li>
         </ul>
       </section>
-      <section className="px-[15px] py-2 xs:hidden min-w-[100vw] bg-[#70B839] opacity-80">
+      <section className="px-[15px] py-2 xs:hidden min-w-full bg-[#70B839] opacity-80">
         <img
           onClick={handleClick}
           src="/img/burger.png"
           className="cursor-pointer"
           alt="Открыть меню"
         />
-        <nav className={open ? "absolute top-9 bg-" : "hidden"}>
-          <ul className="flex items-center justify-center">
-            <li>123</li>
+      </section>
+        <nav className={open ? "absolute top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height" : "hidden"}>
+          <ul className="flex transition-all items-center flex-col h-full justify-center">
+            <li className="text-white uppercase text-[20px] menu-item">Математика</li>
+            <li className="mt-[20px] text-white uppercase text-[20px] menu-item">Правописание</li>
+            <li className="mt-[20px] text-white uppercase text-[20px] menu-item">Рисование</li>
           </ul>
         </nav>
-      </section>
     </div>
   );
 }
