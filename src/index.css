@@ -12,6 +12,14 @@ body, html, #root {
   height: 100%;
 }
 
+#root {
+  background: url('/public/img/background2.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .nav-height {
   height: calc(100% - 40px);
 }
