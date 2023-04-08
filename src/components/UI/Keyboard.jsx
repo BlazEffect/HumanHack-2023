@@ -1,21 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
-import Letter from "./Letter.jsx";
-import { useDrag, useDrop } from "react-dnd";
-import LetterCell from "./LetterCell.jsx";
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Letter from './Letter.jsx';
+import { useDrag, useDrop } from 'react-dnd';
+import LetterCell from './LetterCell.jsx';
 import Modal from '../Modal.jsx';
 
 const Keyboard = ({ word, audio, finalAudio }) => {
   const [countLetters, setCountLetters] = useState(0);
-  const [includedLetters, setLetters] = useState([]);
+  const [includedLetters, setIncludedLetters] = useState([]);
   const [final, setFinal] = useState(false);
   const [tryAgain, setTryAgain] = useState(false);
 
   const audioEl = useRef(null);
-  
+
   const [{ isOver }, dropRef] = useDrop({
-    accept: "letter",
+    accept: 'letter',
     drop: (item) =>
-      setLetters((basket) =>
+      setIncludedLetters((basket) =>
         !basket.includes(item) ? [...basket, item] : basket
       ),
     collect: (monitor) => ({
@@ -24,10 +24,10 @@ const Keyboard = ({ word, audio, finalAudio }) => {
   });
 
   const [{ isOverBack }, dropBackRef] = useDrop({
-    accept: "letter-back",
+    accept: 'letter-back',
     drop: (item) => {
       console.log(item);
-      setLetters((basket) =>
+      setIncludedLetters((basket) =>
         basket.filter((bask) => bask.letter !== item.letter)
       );
     },
@@ -37,28 +37,28 @@ const Keyboard = ({ word, audio, finalAudio }) => {
   });
 
   useEffect(() => {
-    setCountLetters(word?.split("").length);
-  });
+    setCountLetters(word?.split('').length);
+  }, [word]);
 
   useEffect(() => {
-    if(includedLetters.length === word?.split.length) {
+    if (includedLetters.length === word?.split.length) {
       const included = includedLetters.map(letter => letter.letter).join('');
-      if(included === word) {
-        /* playFinalAudio(); -> doesnt work??? TODO TODO  */ 
+      if (included === word) {
+        /* playFinalAudio(); -> doesnt work??? TODO TODO  */
         setFinal(true);
       } else {
         setTryAgain(true);
       }
-      
+
     }
-  }, [includedLetters])
+  }, [includedLetters]);
 
   function playFinalAudio() {
-    console.log(audioEl, audioEl.current.play())
+    console.log(audioEl, audioEl.current.play());
   }
 
   function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    for (let i = array?.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
@@ -66,6 +66,7 @@ const Keyboard = ({ word, audio, finalAudio }) => {
 
   const generateBoxes = () => {
     let content = [];
+
     for (let i = 0; i < countLetters; i++) {
       content.push(
         <LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>
@@ -77,20 +78,21 @@ const Keyboard = ({ word, audio, finalAudio }) => {
 
   function generateBoxedLetters(word) {
     let content = [];
-    let letters = word?.split("");
-    const includeLetter = includedLetters.map((item) => item.letter);
-    letters = letters?.filter((letter) =>
-      includeLetter.includes(letter[0]) ? false : true
-    );
+    let letters = word?.split('');
 
-    for (let i = 0; i < countLetters; i++) {
-      content.push(<Letter index={i} audio={audio} final={finalAudio} letter={letters[i]} key={i} />);
+    const includeLetter = includedLetters.map((item) => item.letter);
+    letters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
+
+    if (letters?.length === countLetters) {
+      if (letters?.length === 2) {
+        [letters[0], letters[1]] = [letters[1], letters[0]];
+      } else {
+        shuffle(letters);
+      }
     }
 
-    if (content.length === 2) {
-      [content[0], content[1]] = [content[1], content[0]];
-    } else {
-      shuffle(content);
+    for (let i = 0; i < letters?.length; i++) {
+      content.push(<Letter index={i} audio={audio} final={finalAudio} letter={letters[i]} key={i}/>);
     }
 
     return content;
@@ -111,13 +113,14 @@ const Keyboard = ({ word, audio, finalAudio }) => {
       >
         {generateBoxedLetters(word)}
       </div>
+
       <audio id="finalAudio" ref={audioEl}>
-        <source src={finalAudio} type='audio/mpeg' />
+        <source src={finalAudio} type="audio/mpeg"/>
       </audio>
-      <Modal open={final} handleClose={() => setFinal(false)} title={'Молодец!'}> 
+      <Modal open={final} handleClose={() => setFinal(false)} title={'Молодец!'}>
         Ты успешно выучил слово {word}
       </Modal>
-      <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}> 
+      <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова
       </Modal>
     </div>
