@@ -6,6 +6,7 @@ import Modal from '../Modal.jsx';
 const Keyboard = ({ word, audio, finalAudio }) => {
   const [countLetters, setCountLetters] = useState(0);
   const [letters, setLetters] = useState([]);
+  const [lettersContent, setLettersContent] = useState([]);
   const [includedLetters, setIncludedLetters] = useState([]);
   const [final, setFinal] = useState(false);
   const [tryAgain, setTryAgain] = useState(false);
@@ -16,11 +17,8 @@ const Keyboard = ({ word, audio, finalAudio }) => {
 
   useEffect(() => {
     let letters = word?.split('');
-    let content = [];
-
-    for (let i = 0; i < letters?.length; i++) {
-      content.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
-    }
+    let letterBoxContent = [];
+    let letterContent = [];
 
     if (letters?.length === 2) {
       [letters[0], letters[1]] = [letters[1], letters[0]];
@@ -28,19 +26,38 @@ const Keyboard = ({ word, audio, finalAudio }) => {
       shuffle(letters);
     }
 
+    for (let i = 0; i < letters?.length; i++) {
+      letterBoxContent.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
+    }
+
+    for (let i = 0; i < letters?.length; i++) {
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={letters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+    }
+
     setCountLetters(letters?.length);
-    setLetterBox(content);
+    setLetterBox(letterBoxContent);
+    setLettersContent(letterContent);
     setLetters(letters);
   }, [word]);
 
   useEffect(() => {
-    let content = [];
+    let letterBoxContent = [];
+    let letterContent = [];
 
     for (let i = 0; i < countLetters; i++) {
-      content.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
+      letterBoxContent.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
     }
 
-    setLetterBox(content);
+    const includeLetter = includedLetters.map((item) => item.letter);
+    const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
+
+    for (let i = 0; i < updatedLetters?.length; i++) {
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+    }
+
+    setLetterBox(letterBoxContent);
+    setLettersContent(letterContent);
+    setLetters(updatedLetters);
 
     if (includedLetters.length === word?.split('').length) {
       const included = includedLetters.map(letter => letter.letter).join('');
@@ -55,12 +72,13 @@ const Keyboard = ({ word, audio, finalAudio }) => {
     }
   }, [includedLetters]);
 
-  function playFinalAudio() {
-    console.log(audioEl, audioEl.current.play());
+  const setIncludedLetter = (index, arrLetters) => {
+    console.log(arrLetters);
+    setIncludedLetters([...includedLetters, { letter: arrLetters[index] }]);
   }
 
-  function addLetter(index) {
-    setIncludedLetters([...includedLetters, {letter: letters[index]}]);
+  function playFinalAudio() {
+    console.log(audioEl, audioEl.current.play());
   }
 
   function shuffle(array) {
@@ -68,28 +86,6 @@ const Keyboard = ({ word, audio, finalAudio }) => {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-  }
-
-  function generateBoxedLetters(word) {
-    let content = [];
-    let letters = word?.split('');
-
-    const includeLetter = includedLetters.map((item) => item.letter);
-    letters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
-
-    if (letters?.length === countLetters) {
-      if (letters?.length === 2) {
-        [letters[0], letters[1]] = [letters[1], letters[0]];
-      } else {
-        shuffle(letters);
-      }
-    }
-
-    for (let i = 0; i < letters?.length; i++) {
-      content.push(<Letter audio={audio} final={finalAudio} letter={letters[i]} key={i} index={i} addLetter={addLetter}/>);
-    }
-
-    return content;
   }
 
   return (
@@ -100,7 +96,7 @@ const Keyboard = ({ word, audio, finalAudio }) => {
 
       <div className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]"
       >
-        {generateBoxedLetters(word)}
+        {lettersContent}
       </div>
 
       <audio id="finalAudio" ref={audioEl}>

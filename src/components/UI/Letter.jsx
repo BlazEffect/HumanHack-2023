@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 
-const Letter = ({ letter, audio, index, addLetter }) => {
+const Letter = ({ letter, audio, setIncludedLetters, includedLetters }) => {
   const audioEl = useRef(null);
 
   const clickCard = () => {
-    addLetter(index);
+    setIncludedLetters([...includedLetters, { letter: letter }]);
     audioEl.current.volume = 0.1;
     audioEl.current.play()
   }
