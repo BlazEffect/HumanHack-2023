@@ -24,7 +24,7 @@ export default function Pictures() {
           ))}
         </div>
       ) : (
-        <div className="h-[83vh]">
+        <div className="">
           <Title>Рисунки не найдены</Title>
         </div>
       )}
