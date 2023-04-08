@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import Modal from '../components/Modal';
 import DrawingArea from "../components/DrawingArea";
 import Layout from "../components/Layout";
+import Title from '../components/UI/Title';
 
 export default function Drawing() {
   const [open, setOpen] = useState(false);
@@ -33,9 +34,9 @@ export default function Drawing() {
   return (
     <>
       <Layout>
-          <h2 className="uppercase text-center mx-auto text-[16px]">
+          <Title className="uppercase text-center mx-auto text-[16px]">
             рисование
-          </h2>
+          </Title>
           <div className="bg-white rounded-[15px] p-1 mt-4 m-2 border-[#70B839] border-2">
                 <DrawingArea  />
           </div>

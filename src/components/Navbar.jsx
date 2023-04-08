@@ -76,10 +76,13 @@ export default function Navbar() {
         unmountOnExit
       >
         <nav ref={nav} className={
-            "absolute top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height my-node"
+            "absolute z-10 top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height my-node"
             }>
           <ul className="flex menu-opened transition-all items-center flex-col h-full justify-center">
             <li className="text-white font-bold uppercase text-[20px] menu-item">
+                <Link to='/'>Главная</Link>
+              </li>
+            <li className="mt-[20px] text-white font-bold uppercase text-[20px] menu-item">
               Математика
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
