@@ -11,7 +11,7 @@ export default function Pictures() {
   }, []);
   return (
     <Layout>
-      {Array.isArray(pictures) === "array" ? (
+      {Array.isArray(pictures) ? (
         <div className="flex flex-col text-[18px] text-center">
           <Title>Твои рисунки</Title>
           {pictures.map((picture, i) => (
@@ -24,7 +24,7 @@ export default function Pictures() {
           ))}
         </div>
       ) : (
-        <div className="h-[83vh]">
+        <div className="">
           <Title>Рисунки не найдены</Title>
         </div>
       )}
