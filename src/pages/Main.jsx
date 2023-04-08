@@ -2,16 +2,21 @@ import Layout from '../components/Layout';
 import Title from '../components/UI/Title';
 import SwiperItem from '../components/SwiperItem';
 
+import math from '/src/assets/images/Slider/math.png';
+import or from '/src/assets/images/Slider/or.png';
+import izo from '/src/assets/images/Slider/izo.png';
+import images from '/src/assets/images/Slider/images.png';
+
 export default function Main() {
   return (
     <Layout>
       <Title>Выберите направление</Title>
       <div className="p-[22px]">
         <swiper-container slides-per-view="1" navigation="true" pagination="true">
-          <SwiperItem path="/src/assets/images/Slider/math.png" to="/">Математика</SwiperItem>
-          <SwiperItem path="/src/assets/images/Slider/or.png" to="/alphabet">Правописание</SwiperItem>
-          <SwiperItem path="/src/assets/images/Slider/izo.png" to="/draw">Рисование</SwiperItem>
-          <SwiperItem path="/src/assets/images/Slider/images.png" to="/draw">Рисунки</SwiperItem>
+          <SwiperItem path={math} to="/">Математика</SwiperItem>
+          <SwiperItem path={or} to="/alphabet">Правописание</SwiperItem>
+          <SwiperItem path={izo} to="/draw">Рисование</SwiperItem>
+          <SwiperItem path={images} to="/draw">Рисунки</SwiperItem>
         </swiper-container>
       </div>
     </Layout>

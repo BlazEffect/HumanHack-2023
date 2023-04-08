@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import Layout from "../components/Layout";
-import Title from "../components/UI/Title";
+import { useState, useEffect } from 'react';
+import Layout from '../components/Layout';
+import Title from '../components/UI/Title';
 
 export default function Pictures() {
-  const [pictures, setPictures] = useState(localStorage.getItem("images"));
+  const [pictures, setPictures] = useState(localStorage.getItem('images'));
   useEffect(() => {
-    if (pictures && typeof pictures !== "object") {
+    if (pictures && typeof pictures !== 'object') {
       setPictures(JSON.parse(pictures));
     }
   }, []);
@@ -17,9 +17,9 @@ export default function Pictures() {
           {pictures.map((picture, i) => (
             <div key={i} className="flex justify-between items-center m-2 border-black border-2">
               <span className="text-left pl-2">{`${
-                i === 0 ? "Твой первый рисунок" : "Рисунок " + ++i
+                i === 0 ? 'Твой первый рисунок' : 'Рисунок ' + ++i
               } `}</span>
-              <img className="max-w-[250px]" src={picture} alt={"Рисунок"} />
+              <img className="max-w-[250px]" src={picture} alt={'Рисунок'}/>
             </div>
           ))}
         </div>

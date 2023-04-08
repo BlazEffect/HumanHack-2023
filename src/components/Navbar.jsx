@@ -1,10 +1,13 @@
-import lamp from "/src/assets/images/lamp.png";
-import stars from "/src/assets/images/sparkle.png";
-import aIcon from "/src/assets/images/Group 68.png";
-import mushrooms from "/src/assets/images/mushroom-filled.png";
-import { useState, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
-import { Link } from "react-router-dom";
+import lamp from '../assets/images/lamp.png';
+import stars from '../assets/images/sparkle.png';
+import aIcon from '../assets/images/Group 68.png';
+import mushrooms from '../assets/images/mushroom-filled.png';
+import closeIcon from '../assets/images/close.png';
+import burgerIcon from '../assets/images/burger.png';
+import { useState, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const nav = useRef(null);
@@ -63,7 +66,7 @@ export default function Navbar() {
       <section className="px-[15px] flex h-[50px] items-center md:hidden min-w-full bg-[#70B839] opacity-80">
         <img
           onClick={handleClick}
-          src={open ? "/src/assets/images/close.png" : "/src/assets/images/burger.png"}
+          src={open ? closeIcon : burgerIcon}
           className="cursor-pointer max-h-[32px] max-w-[32px]"
           alt="Открыть меню"
         />
@@ -76,11 +79,11 @@ export default function Navbar() {
         unmountOnExit
       >
         <nav ref={nav} className={
-            "absolute z-10 top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height my-node"
-            }>
+          'absolute z-10 top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height my-node'
+        }>
           <ul className="flex menu-opened transition-all items-center flex-col h-full justify-center">
             <li className="text-white font-bold uppercase text-[20px] menu-item">
-              <Link to='/'>Главная</Link>
+              <Link to="/">Главная</Link>
             </li>
             <li className="mt-[20px] text-white font-bold uppercase text-[20px] menu-item">
               <Link to="/math">Математика</Link>
@@ -89,7 +92,7 @@ export default function Navbar() {
               <Link to="/alphabet">Правописание</Link>
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
-              <Link to='/draw'>Рисование</Link>
+              <Link to="/draw">Рисование</Link>
             </li>
             <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
               <Link to="/pictures">Рисунки</Link>

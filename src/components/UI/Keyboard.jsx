@@ -31,7 +31,8 @@ const Keyboard = ({ word, audio, finalAudio }) => {
     }
 
     for (let i = 0; i < letters?.length; i++) {
-      letterContent.push(<Letter audio={audio} final={finalAudio} letter={letters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={letters[i]} key={i} index={i}
+                                 setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
     }
 
     setCountLetters(letters?.length);
@@ -52,7 +53,8 @@ const Keyboard = ({ word, audio, finalAudio }) => {
     const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
 
     for (let i = 0; i < updatedLetters?.length; i++) {
-      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i}
+                                 setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
     }
 
     setLetterBox(letterBoxContent);
@@ -75,7 +77,7 @@ const Keyboard = ({ word, audio, finalAudio }) => {
   const setIncludedLetter = (index, arrLetters) => {
     console.log(arrLetters);
     setIncludedLetters([...includedLetters, { letter: arrLetters[index] }]);
-  }
+  };
 
   function playFinalAudio() {
     console.log(audioEl, audioEl.current.play());
@@ -94,7 +96,8 @@ const Keyboard = ({ word, audio, finalAudio }) => {
         {letterBox}
       </div>
 
-      <div className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]"
+      <div
+        className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]"
       >
         {lettersContent}
       </div>
