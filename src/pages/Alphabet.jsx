@@ -39,8 +39,11 @@ const Alphabet = () => {
 
       <Card>
         <ImageCard imagePath={'/public/img/Alphabet/' + items.items?.[level - 1].imageName}/>
-
-        <Keyboard word={items.items?.[level - 1].word}/>
+        <Keyboard 
+          audio={items.items?.[level-1].speech}
+          finalAudio={items.items?.[level-1].final}
+          word={items.items?.[level - 1].word}
+        />
       </Card>
 
     </Layout>

@@ -5,7 +5,12 @@
     "items": [
       {
         "word": "ёж",
-        "imageName": "hedgehog.jpg"
+        "imageName": "hedgehog.jpg",
+        "speech": {
+          "ё": "/src/assets/audio/ё.mp3",
+          "ж": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "кот",
