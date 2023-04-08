@@ -8,10 +8,10 @@ export default function Main() {
       <Title>Выберите направление</Title>
       <div className="p-[22px]">
         <swiper-container slides-per-view="1" navigation="true" pagination="true">
-          <SwiperItem path="/public/img/Slider/math.png" to="/">Математика</SwiperItem>
-          <SwiperItem path="/public/img/Slider/or.png" to="/alphabet">Правописание</SwiperItem>
-          <SwiperItem path="/public/img/Slider/izo.png" to="/draw">Рисование</SwiperItem>
-          <SwiperItem path="/public/img/Slider/images.png" to="/draw">Рисунки</SwiperItem>
+          <SwiperItem path="/src/assets/images/Slider/math.png" to="/">Математика</SwiperItem>
+          <SwiperItem path="/src/assets/images/Slider/or.png" to="/alphabet">Правописание</SwiperItem>
+          <SwiperItem path="/src/assets/images/Slider/izo.png" to="/draw">Рисование</SwiperItem>
+          <SwiperItem path="/src/assets/images/Slider/images.png" to="/draw">Рисунки</SwiperItem>
         </swiper-container>
       </div>
     </Layout>

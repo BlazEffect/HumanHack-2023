@@ -1,7 +1,7 @@
-import lamp from "/public/img/lamp.png";
-import stars from "/public/img/sparkle.png";
-import aIcon from "/public/img/Group 68.png";
-import mushrooms from "/public/img/mushroom-filled.png";
+import lamp from "/src/assets/images/lamp.png";
+import stars from "/src/assets/images/sparkle.png";
+import aIcon from "/src/assets/images/Group 68.png";
+import mushrooms from "/src/assets/images/mushroom-filled.png";
 import { useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function Navbar() {
   };
   return (
     <div className="w-full max-h-[50px] md:max-h-none">
-      <section className="max-w-[250px] md:flex hidden w-full min-h-full bg-cover bg-[url('/public/img/sidebar.png')]">
+      <section className="max-w-[250px] md:flex hidden w-full min-h-full bg-cover bg-[url('/src/assets/images/sidebar.png')]">
         <ul className="mt-16 mx-4">
           <li className="flex">
             <div className="bg-[#58AA2C] p-2 rounded-[10px]">
@@ -63,7 +63,7 @@ export default function Navbar() {
       <section className="px-[15px] flex h-[50px] items-center md:hidden min-w-full bg-[#70B839] opacity-80">
         <img
           onClick={handleClick}
-          src={open ? "/img/close.png" : "/img/burger.png"}
+          src={open ? "/src/assets/images/close.png" : "/src/assets/images/burger.png"}
           className="cursor-pointer max-h-[32px] max-w-[32px]"
           alt="Открыть меню"
         />
