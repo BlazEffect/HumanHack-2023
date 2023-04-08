@@ -31,23 +31,23 @@
     "items": [
       {
         "word": "чипсы",
-        "imageName": ""
+        "imageName": "lays.png"
       },
       {
         "word": "дошик",
-        "imageName": ""
+        "imageName": "doshik.png"
       },
       {
         "word": "конфеты",
-        "imageName": ""
+        "imageName": "sweet.png"
       },
       {
         "word": "картошка",
-        "imageName": ""
+        "imageName": "potato.png"
       },
       {
         "word": "салат",
-        "imageName": ""
+        "imageName": "salad.png"
       }
     ]
   },
@@ -57,19 +57,19 @@
     "items": [
       {
         "word": "малина",
-        "imageName": ""
+        "imageName": "raspberry.png"
       },
       {
         "word": "клубника",
-        "imageName": ""
+        "imageName": "strawberries.png"
       },
       {
         "word": "черника",
-        "imageName": ""
+        "imageName": "blueberries.png"
       },
       {
         "word": "яблоко",
-        "imageName": ""
+        "imageName": "apple.png"
       }
     ]
   }
