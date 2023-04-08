@@ -27,8 +27,8 @@ const Alphabet = () => {
 
       saveSection(section.name);
     } else {
-      const sectionIndex = data.map( (section) => { return section.name; }).indexOf(savedSection);
-      setItems(data[sectionIndex])
+      const sectionIndex = data.map((section) => { return section.name; }).indexOf(savedSection);
+      setItems(data[sectionIndex]);
       setMaxLevel(data[sectionIndex].maxLevels);
     }
   }, []);

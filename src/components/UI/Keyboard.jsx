@@ -23,7 +23,7 @@ const Keyboard = ({ word }) => {
     }
 
     return content;
-  }
+  };
 
   function generateBoxedLetters(word) {
     let content = [];
@@ -36,7 +36,7 @@ const Keyboard = ({ word }) => {
     if (content.length === 2) {
       [content[0], content[1]] = [content[1], content[0]];
     } else {
-      content = shuffle(content);
+      shuffle(content);
     }
 
     return content;
@@ -44,11 +44,11 @@ const Keyboard = ({ word }) => {
 
   return (
     <div>
-      <div className="bg-white w-3/4 m-auto flex justify-center flex-wrap gap-1.5 mt-10">
+      <div className="bg-white w-max m-auto flex justify-center flex-wrap gap-1.5 py-[16px] px-[10px] rounded-[10px]">
         {generateBoxes()}
       </div>
 
-      <div className="bg-[#ccc] w-100 mt-10 flex flex-wrap gap-1.5 justify-center text-center py-10">
+      <div className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]">
         {generateBoxedLetters(word)}
       </div>
     </div>
