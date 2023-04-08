@@ -12,18 +12,33 @@ const Alphabet = () => {
   const [maxLevel, setMaxLevel] = useState(1);
   const [items, setItems] = useState([]);
 
+  function saveSection(sectionName) {
+    localStorage.setItem('section', sectionName);
+  }
+
   useEffect(() => {
-    const number = Math.floor(Math.random() * data.length);
-    setItems(data[number]);
-    setMaxLevel(data[number].maxLevels);
+    const savedSection = localStorage.getItem('section');
+
+    if (!savedSection) {
+      const number = Math.floor(Math.random() * data.length);
+      const section = data[number];
+      setItems(section);
+      setMaxLevel(section.maxLevels);
+
+      saveSection(section.name);
+    } else {
+      const sectionIndex = data.map( (section) => { return section.name; }).indexOf(savedSection);
+      setItems(data[sectionIndex])
+      setMaxLevel(data[sectionIndex].maxLevels);
+    }
   }, []);
 
   return (
     <Layout>
-      <LevelCounter level={level} maxLevel={maxLevel} />
+      <LevelCounter level={level} maxLevel={maxLevel}/>
 
       <Card>
-        <ImageCard imagePath={"/public/img/Alphabet/" + items.items?.[level - 1].imageName}/>
+        <ImageCard imagePath={'/public/img/Alphabet/' + items.items?.[level - 1].imageName}/>
 
         <Keyboard word={items.items?.[level - 1].word}/>
       </Card>
