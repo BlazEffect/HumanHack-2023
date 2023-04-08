@@ -1,16 +1,13 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useDrag } from "react-dnd";
+import React, { useRef } from "react";
 
-const Letter = ({ letter, index, audio }) => {
+const Letter = ({ letter, audio, index, addLetter }) => {
   const audioEl = useRef(null);
-  
-  const [{ isDragging }, dragRef] = useDrag({
-    type: "letter",
-    item: { letter, index },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  });
+
+  const clickCard = () => {
+    addLetter(index);
+    audioEl.current.volume = 0.1;
+    audioEl.current.play()
+  }
 
   const playAudio = () => {
     audioEl.current.volume = 0.1;
@@ -20,15 +17,13 @@ const Letter = ({ letter, index, audio }) => {
   return (
     <>
       <div
-        draggable
-        onClick={playAudio}
-        ref={dragRef}
+        onClick={clickCard}
         className="bg-white w-10 min-h-[40px] flex items-center justify-center"
       >
         {letter}
       </div>
       {
-        Object.keys(audio).map(item => item === letter && ( 
+        Object.keys(audio).map(item => item === letter && (
         <audio ref={audioEl} key={item}>
           <source
           /* TODO: replace src */
