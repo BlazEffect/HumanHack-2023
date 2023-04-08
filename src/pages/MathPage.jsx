@@ -60,7 +60,7 @@ const MathPage = () => {
       <Card>
         <div className="flex items-center relative mx-4 justify-between h-30">
           {items.items?.[level - 1].images.map((image, i) => (
-              <>
+              <React.Fragment key={i}>
                   {i === 1 && (
                     <div className="text-[#70B839] flex text-[100px] mb-6 xs:mb-0">
                       {sign}
@@ -70,7 +70,7 @@ const MathPage = () => {
                   small
                   imagePath={"/src/assets/img/math/" + image.path}
                 />
-              </>
+              </React.Fragment>
           ))}
         </div>
         <Keyboard answer={answer} images={items.items?.[level - 1].imagesPrimer} />

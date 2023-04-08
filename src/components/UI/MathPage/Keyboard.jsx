@@ -14,7 +14,7 @@ const Keyboard = ({ images, answer }) => {
     const content = [];
     for (let i = 0; i < images?.length; i++) {
       content.push(
-        <Image image={images[i]} setIncludedImage={setIncludedImage} />
+        <Image key={i} image={images[i]} setIncludedImage={setIncludedImage} />
       );
     }
     setImageContent(content);
@@ -24,7 +24,7 @@ const Keyboard = ({ images, answer }) => {
     const content = [];
     for (let i = 0; i < images?.length; i++) {
         content.push(
-          <Image image={filteredImages[i]} setIncludedImage={setIncludedImage} />
+          <Image key={i} image={filteredImages[i]} setIncludedImage={setIncludedImage} />
         );
       }
       setImageContent(content);
@@ -39,6 +39,7 @@ const Keyboard = ({ images, answer }) => {
 
   const restart = () => {
     setIncludedImage('');
+    setTryAgain(false);
   }
 
   return (
@@ -55,7 +56,7 @@ const Keyboard = ({ images, answer }) => {
         handleClose={() => setFinal(false)}
         title={"Молодец!"}
       >
-        Ты успешно выучил слово
+        Ты успешно прошёл пример
       </Modal>
       <Modal
         open={tryAgain}

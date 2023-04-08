@@ -1,72 +1,153 @@
 [
   {
     "name": "cats",
-    "maxLevels": 5,
+    "maxLevels": 2,
     "items": [
       {
         "images": [
           {
-            "path": "6.1.png",
-            "amount": 1
+            "path": "3.1 .png",
+            "amount": 3
           },
           {
-            "path": "6.1.png",
+            "path": "1.1 .png",
             "amount": 1
           }
         ],
         "imagesPrimer": [
           {
-            "path": "6.2.png",
+            "path": "2.1 .png",
             "amount": 2
           }, 
           {
-            "path": "6.1.png",
-            "amount": 4
+            "path": "6.1 .png",
+            "amount": 6
           }
         ]
       },
       {
-        "word": "кот",
-        "imageName": "cat.jpg",
-        "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "т": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
+        "images": [
+          {
+            "path": "1.2 .png",
+            "amount": 1
+          },
+          {
+            "path": "1.1 .png",
+            "amount": 1
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "3.1 .png",
+            "amount": 3
+          }, 
+          {
+            "path": "2.1 .png",
+            "amount": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fruit",
+    "maxLevels": 2,
+    "items": [
+      {
+        "images": [
+          {
+            "path": "3.2 .png",
+            "amount": 3
+          },
+          {
+            "path": "1.3 .png",
+            "amount": 1
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "2.2 .png",
+            "amount": 2
+          }, 
+          {
+            "path": "3.4 .png",
+            "amount": 3
+          }
+        ]
       },
       {
-        "word": "корова",
-        "imageName": "cow.jpg",
-        "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "р": "/src/assets/audio/ж.mp3",
-          "в": "/src/assets/audio/ж.mp3",
-          "а": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
+        "images": [
+          {
+            "path": "5.1 .png",
+            "amount": 5
+          },
+          {
+            "path": "2.3 .png",
+            "amount": 2
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "3.2 .png",
+            "amount": 3
+          }, 
+          {
+            "path": "6.1 .png",
+            "amount": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "birds",
+    "maxLevels": 2,
+    "items": [
+      {
+        "images": [
+          {
+            "path": "6.1 .png",
+            "amount": 6
+          },
+          {
+            "path": "4.1 .png",
+            "amount": 4
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "2.4 .png",
+            "amount": 2
+          }, 
+          {
+            "path": "3.4 .png",
+            "amount": 3
+          }
+        ]
       },
       {
-        "word": "як",
-        "imageName": "yak.jpg",
-        "speech": {
-          "я": "/src/assets/audio/ё.mp3",
-          "к": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
-      },
-      {
-        "word": "осёл",
-        "imageName": "donkey.jpg",
-        "speech": {
-          "о": "/src/assets/audio/ё.mp3",
-          "с": "/src/assets/audio/ж.mp3",
-          "ё": "/src/assets/audio/ж.mp3",
-          "л": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
+        "images": [
+          {
+            "path": "2.4 .png",
+            "amount": 2
+          },
+          {
+            "path": "4.1 .png",
+            "amount": 2
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "6.1 .png",
+            "amount": 4
+          }, 
+          {
+            "path": "3.4 .png",
+            "amount": 3
+          }
+        ]
       }
     ]
   }
+
 ]
