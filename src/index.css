@@ -48,6 +48,24 @@ body {
   transition: opacity 700ms;
 }
 
+.show-modal-enter {
+  opacity: 0;
+  transition: opacity 700ms;
+}
+
+.show-modal-enter-active {
+  opacity: 1;
+  transition: opacity 700ms;
+}
+.show-modal-exit {
+  opacity: 1;
+  transition: opacity 700ms;
+}
+.show-modal-exit-active {
+  opacity: 0;
+  transition: opacity 700ms;
+}
+
 .blured {
   backdrop-filter: blur(3px);
 }
@@ -73,4 +91,19 @@ body {
 .scroll-fix {
   position: absolute;
   width: calc(100vw - 100%);
+}
+
+.show-block-enter {
+  opacity: 0;
+}
+.show-block-enter-active {
+  opacity: 1;
+  transition: opacity 700ms;
+}
+.show-block-exit {
+  opacity: 1;
+}
+.show-blockmy-node-exit-active {
+  opacity: 0;
+  transition: opacity 700ms;
 }

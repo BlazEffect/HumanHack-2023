@@ -1,0 +1,72 @@
+[
+  {
+    "name": "cats",
+    "maxLevels": 5,
+    "items": [
+      {
+        "images": [
+          {
+            "path": "6.1.png",
+            "amount": 1
+          },
+          {
+            "path": "6.1.png",
+            "amount": 1
+          }
+        ],
+        "imagesPrimer": [
+          {
+            "path": "6.2.png",
+            "amount": 2
+          }, 
+          {
+            "path": "6.1.png",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "word": "кот",
+        "imageName": "cat.jpg",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "т": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
+      },
+      {
+        "word": "корова",
+        "imageName": "cow.jpg",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "р": "/src/assets/audio/ж.mp3",
+          "в": "/src/assets/audio/ж.mp3",
+          "а": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
+      },
+      {
+        "word": "як",
+        "imageName": "yak.jpg",
+        "speech": {
+          "я": "/src/assets/audio/ё.mp3",
+          "к": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
+      },
+      {
+        "word": "осёл",
+        "imageName": "donkey.jpg",
+        "speech": {
+          "о": "/src/assets/audio/ё.mp3",
+          "с": "/src/assets/audio/ж.mp3",
+          "ё": "/src/assets/audio/ж.mp3",
+          "л": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
+      }
+    ]
+  }
+]
