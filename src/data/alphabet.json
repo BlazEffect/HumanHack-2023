@@ -14,19 +14,45 @@
       },
       {
         "word": "кот",
-        "imageName": "cat.jpg"
+        "imageName": "cat.jpg",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "т": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "корова",
-        "imageName": "cow.jpg"
+        "imageName": "cow.jpg",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "р": "/src/assets/audio/ж.mp3",
+          "в": "/src/assets/audio/ж.mp3",
+          "а": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "як",
-        "imageName": "yak.jpg"
+        "imageName": "yak.jpg",
+        "speech": {
+          "я": "/src/assets/audio/ё.mp3",
+          "к": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "осёл",
-        "imageName": "donkey.jpg"
+        "imageName": "donkey.jpg",
+        "speech": {
+          "о": "/src/assets/audio/ё.mp3",
+          "с": "/src/assets/audio/ж.mp3",
+          "ё": "/src/assets/audio/ж.mp3",
+          "л": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       }
     ]
   },
@@ -36,23 +62,65 @@
     "items": [
       {
         "word": "чипсы",
-        "imageName": "lays.png"
+        "imageName": "lays.png",
+        "speech": {
+          "ч": "/src/assets/audio/ё.mp3",
+          "и": "/src/assets/audio/ж.mp3",
+          "п": "/src/assets/audio/ж.mp3",
+          "с": "/src/assets/audio/ж.mp3",
+          "ы": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "дошик",
-        "imageName": "doshik.png"
+        "imageName": "doshik.png",
+        "speech": {
+          "д": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "ш": "/src/assets/audio/ж.mp3",
+          "и": "/src/assets/audio/ж.mp3",
+          "к": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "конфеты",
-        "imageName": "sweet.png"
+        "imageName": "sweet.png",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "н": "/src/assets/audio/ж.mp3",
+          "ф": "/src/assets/audio/ж.mp3",
+          "е": "/src/assets/audio/ж.mp3",
+          "т": "/src/assets/audio/ж.mp3",
+          "ы": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "картошка",
-        "imageName": "potato.png"
+        "imageName": "potato.png",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "а": "/src/assets/audio/ж.mp3",
+          "р": "/src/assets/audio/ж.mp3",
+          "т": "/src/assets/audio/ж.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "ш": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "салат",
-        "imageName": "salad.png"
+        "imageName": "salad.png",
+        "speech": {
+          "с": "/src/assets/audio/ё.mp3",
+          "а": "/src/assets/audio/ж.mp3",
+          "л": "/src/assets/audio/ж.mp3",
+          "т": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       }
     ]
   },
@@ -62,19 +130,55 @@
     "items": [
       {
         "word": "малина",
-        "imageName": "raspberry.png"
+        "imageName": "raspberry.png",
+        "speech": {
+          "м": "/src/assets/audio/ё.mp3",
+          "а": "/src/assets/audio/ж.mp3",
+          "л": "/src/assets/audio/ж.mp3",
+          "и": "/src/assets/audio/ж.mp3",
+          "н": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "клубника",
-        "imageName": "strawberries.png"
+        "imageName": "strawberries.png",
+        "speech": {
+          "к": "/src/assets/audio/ё.mp3",
+          "л": "/src/assets/audio/ж.mp3",
+          "у": "/src/assets/audio/ж.mp3",
+          "б": "/src/assets/audio/ж.mp3",
+          "н": "/src/assets/audio/ж.mp3",
+          "и": "/src/assets/audio/ж.mp3",
+          "а": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "черника",
-        "imageName": "blueberries.png"
+        "imageName": "blueberries.png",
+        "speech": {
+          "ч": "/src/assets/audio/ё.mp3",
+          "е": "/src/assets/audio/ж.mp3",
+          "р": "/src/assets/audio/ж.mp3",
+          "н": "/src/assets/audio/ж.mp3",
+          "и": "/src/assets/audio/ж.mp3",
+          "к": "/src/assets/audio/ж.mp3",
+          "а": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "яблоко",
-        "imageName": "apple.png"
+        "imageName": "apple.png",
+        "speech": {
+          "я": "/src/assets/audio/ё.mp3",
+          "б": "/src/assets/audio/ж.mp3",
+          "л": "/src/assets/audio/ж.mp3",
+          "о": "/src/assets/audio/ж.mp3",
+          "к": "/src/assets/audio/ж.mp3"
+        },
+        "final": "/src/assets/audio/ёж.mp3"
       }
     ]
   }
