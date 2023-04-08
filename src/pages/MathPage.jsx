@@ -49,7 +49,7 @@ const MathPage = () => {
       if(images[0].amount > images[1].amount) {
         setAnswer(images[0].amount - images[1].amount)
       }
-    
+
     }
   });
 
@@ -68,7 +68,7 @@ const MathPage = () => {
                   )}
                 <ImageCard
                   small
-                  imagePath={"/src/assets/img/math/" + image.path}
+                  imagePath={"/math/" + image.path}
                 />
               </>
           ))}

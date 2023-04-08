@@ -12,7 +12,7 @@ const Image = ({ image, setIncludedImage }) => {
         className="bg-white w-28 h-28 flex items-center justify-center"
       >
         {/* todo */}
-        {image?.path && <img src={'/src/assets/img/math/' + image?.path} />}
+        {image?.path && <img src={'/math/' + image?.path} />}
       </div>
     </>
   );
