@@ -4,13 +4,22 @@ import aIcon from '../assets/images/Group 68.png';
 import mushrooms from '../assets/images/mushroom-filled.png';
 import closeIcon from '../assets/images/close.png';
 import burgerIcon from '../assets/images/burger.png';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const nav = useRef(null);
+
+  useEffect(() => {
+    if(open) {
+      console.log('')
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [open])
 
   const handleClick = () => {
     setOpen(!open);
