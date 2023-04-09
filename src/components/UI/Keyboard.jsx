@@ -53,8 +53,12 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
       letterBoxContent.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
     }
 
-    const includeLetter = includedLetters.map((item) => item.letter);
-    const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
+    //const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
+    const includeLetter = includedLetters[includedLetters.length - 1];
+    const element = letters?.find((letter) => includeLetter.letter === letter[0]);
+    const index = letters?.indexOf(element);
+    const updatedLetters = letters;
+    updatedLetters?.splice(index, 1);
 
     for (let i = 0; i < updatedLetters?.length; i++) {
       letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
@@ -108,15 +112,10 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
       <audio id="finalAudio" ref={audioEl}>
         <source src={finalAudio} type="audio/mpeg"/>
       </audio>
-      <Modal open={final} handleClose={() => setFinal(false)} title={'Молодец!'}>
+      <Modal open={final} handleClose={() => {setFinal(false); setLevel();}} title={'Молодец!'}>
         Ты успешно выучил слово {word}
 
-        <Button
-          handleClick={() => {
-            setFinal(false);
-            setLevel();
-          }
-          }>Продолжить</Button>
+        <Button handleClick={() => {setFinal(false); setLevel();}}>Продолжить</Button>
       </Modal>
       <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова

@@ -52,6 +52,8 @@ const Alphabet = () => {
       <LevelCounter level={level} maxLevel={maxLevel}/>
 
       <Card>
+        { console.log(items.items?.[level - 1]) }
+        { console.log(level) }
         <ImageCard imagePath={'/alphabet/' + items.items?.[level - 1].imageName}/>
         <Keyboard
           audio={items.items?.[level - 1].speech}
