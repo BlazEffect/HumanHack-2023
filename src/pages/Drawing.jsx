@@ -4,6 +4,7 @@ import Modal from '../components/Modal';
 import DrawingArea from '../components/DrawingArea';
 import Layout from '../components/Layout';
 import Title from '../components/UI/Title';
+import { Link } from 'react-router-dom';
 
 export default function Drawing() {
   const [open, setOpen] = useState(false);
@@ -49,8 +50,11 @@ export default function Drawing() {
           </Button>
         </div>
       </Layout>
-      <Modal handleClose={() => setOpen(false)} title={'Успех!'} open={open}>
-        Готово
+      <Modal withOutTimer handleClose={() => setOpen(false)} title={'Успешно!'} open={open}>
+        Рисунок успешно сохранен
+        <Button handleClick={() => setOpen(false)}>
+          <Link to="/pictures">Мои рисунки</Link>
+        </Button>
       </Modal>
     </>
   );

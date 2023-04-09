@@ -8,6 +8,7 @@ export default function Pictures() {
     if (pictures && typeof pictures !== 'object') {
       setPictures(JSON.parse(pictures));
     }
+    document.body.style.overflow = 'auto'
   }, []);
   return (
     <Layout>

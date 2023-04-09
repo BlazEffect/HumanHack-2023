@@ -4,7 +4,8 @@ import Drawing from '../pages/Drawing';
 import Main from '../pages/Main';
 import Alphabet from '../pages/Alphabet.jsx';
 import MathPage from '../pages/MathPage';
-const router = createBrowserRouter([
+
+export const routes = [
     {
         path: '/',
         element: (<Main />)
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
         path: '/math',
         element: <MathPage />
     }
-]);
+]
+
+const router = createBrowserRouter(routes);
 
 export default router;

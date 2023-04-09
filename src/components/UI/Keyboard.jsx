@@ -19,6 +19,13 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
   useEffect(() => {
     if(final) {
       setLevel()
+      const finalTrackPath = new URL(finalAudio, import.meta.url);
+      const finalTrack = new Audio(finalTrackPath);
+      finalTrack.volume = 0.5
+      setTimeout(() => {
+        finalTrack.play()
+      }, 500)
+
     }
   }, [final])
 
@@ -111,7 +118,7 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
         {letterBox}
       </div>
 
-      <div className="letters-wrapper max-w-full w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]">
+      <div className="letters-wrapper max-w-full w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[14px] rounded-[10px]">
         {lettersContent}
       </div>
 
@@ -122,7 +129,7 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
         Ты успешно выучил слово
         <Button handleClick={() => setFinal(false)}>Продолжить</Button>
       </Modal>
-      <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
+      <Modal open={tryAgain} withOutTimer handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова
       </Modal>
     </div>

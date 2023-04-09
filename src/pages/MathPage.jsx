@@ -6,6 +6,9 @@ import LevelCounter from "../components/UI/LevelCounter.jsx";
 import Card from "../components/UI/Card.jsx";
 import ImageCard from "../components/UI/ImageCard.jsx";
 import Keyboard from "../components/UI/MathPage/Keyboard.jsx";
+import Button from '../components/Button.jsx';
+import { Link } from 'react-router-dom';
+import Modal from '../components/Modal.jsx';
 
 const MathPage = () => {
   const [level, setLevel] = useState(1);
@@ -13,20 +16,19 @@ const MathPage = () => {
   const [maxLevel, setMaxLevel] = useState(1);
   const [items, setItems] = useState([]);
   const [answer, setAnswer] = useState();
-  const [final, setFinal] = useState();
+  const [final, setFinal] = useState(false);
 
   function saveSection(sectionName) {
     localStorage.setItem("section-math", sectionName);
   }
 
   function nextLevel() {
-    if(+level + 1 > maxLevel) {
+    if(level + 1 > maxLevel) {
       setFinal(true);
-      console.log(level + 1, maxLevel)
       return;
     }
-    setLevel(+level + 1);
-    saveLevel(+level + 1);
+    setLevel(level + 1);
+    saveLevel(level + 1);
   }
 
   function saveLevel(level) {
@@ -96,6 +98,12 @@ const MathPage = () => {
         </div>
         <Keyboard setLevel={nextLevel} answer={answer} images={items.items?.[level - 1].imagesPrimer} />
       </Card>
+      <Modal title={'Вы успешно завершили все уроки!'} withOutTimer open={final} handleClose={() => setFinal(false)}>
+        Поздравляю, ты справился!
+        <Button>
+          <Link to='/'>Вернуться на главную</Link>
+        </Button>
+      </Modal>
     </Layout>
   );
 };

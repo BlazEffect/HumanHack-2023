@@ -6,17 +6,22 @@ import LevelCounter from '../components/UI/LevelCounter.jsx';
 import Card from '../components/UI/Card.jsx';
 import ImageCard from '../components/UI/ImageCard.jsx';
 import Keyboard from '../components/UI/Keyboard.jsx';
+import Modal from '../components/Modal.jsx';
+import Button from '../components/Button.jsx';
+import { Link } from 'react-router-dom';
 
 const Alphabet = () => {
   const [level, setLevel] = useState(1);
   const [maxLevel, setMaxLevel] = useState(1);
   const [items, setItems] = useState([]);
+  const [final, setFinal] = useState(false)
 
   function nextLevel() {
-    console.log('next')
-    if (level + 1 < maxLevel) {
+    if (level + 1 <= maxLevel) {
       setLevel(level + 1);
       saveLevel(level + 1);
+    } else {
+      setFinal(true)
     }
   }
 
@@ -63,7 +68,12 @@ const Alphabet = () => {
           setLevel={nextLevel}
         />
       </Card>
-
+      <Modal title={'Вы успешно завершили все уроки!'} open={final} handleClose={() => setFinal(false)}>
+        Поздравляю, ты справился!
+        <Button>
+          <Link to='/'>Вернуться на главную</Link>
+        </Button>
+      </Modal>
     </Layout>
   );
 };

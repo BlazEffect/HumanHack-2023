@@ -13,12 +13,12 @@ const Letter = ({ letter, audio, setIncludedLetters, includedLetters }) => {
     <>
       <div
         onClick={clickCard}
-        className="bg-white w-10 min-h-[40px] flex items-center justify-center"
+        className="bg-white w-10 min-h-[40px] text-[24px] flex items-center justify-center"
       >
         {letter}
       </div>
-      
-      
+
+
     </>
   );
 };

@@ -10,6 +10,13 @@ const Keyboard = ({ images, answer, setLevel }) => {
 
   const [final, setFinal] = useState(false);
   const [tryAgain, setTryAgain] = useState(false);
+
+  useEffect(() => {
+    if(final) {
+      setLevel()
+    }
+  }, [final])
+
   useEffect(() => {
     const content = [];
     for (let i = 0; i < images?.length; i++) {
@@ -30,7 +37,7 @@ const Keyboard = ({ images, answer, setLevel }) => {
       setImageContent(content);
     if(includedImage?.path) {
         setTimeout(() => {
-            includedImage.amount === answer ? 
+            includedImage.amount === answer ?
             setFinal(true) : setTryAgain(true);
         }, 1500)
     }
@@ -53,7 +60,8 @@ const Keyboard = ({ images, answer, setLevel }) => {
       </div>
       <Modal
         open={final}
-        handleClose={() => setLevel()}
+        withOutTimer
+        handleClose={() => setFinal(false)}
         title={"Молодец!"}
       >
         Ты успешно прошёл пример
@@ -61,6 +69,7 @@ const Keyboard = ({ images, answer, setLevel }) => {
       </Modal>
       <Modal
         open={tryAgain}
+        withOutTimer
         handleClose={() => setTryAgain(false)}
         title={"Молодец!"}
       >
