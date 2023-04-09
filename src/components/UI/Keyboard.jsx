@@ -16,6 +16,12 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
 
   const audioEl = useRef(null);
 
+  useEffect(() => {
+    if(final) {
+      setLevel()
+    }
+  }, [final])
+
   function updateLetters(word, includedLetters) {
     let lettersCount = word?.length;
     let letterContent = [];
@@ -112,10 +118,9 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
       <audio id="finalAudio" ref={audioEl}>
         <source src={finalAudio} type="audio/mpeg"/>
       </audio>
-      <Modal open={final} handleClose={() => {setFinal(false); setLevel();}} title={'Молодец!'}>
-        Ты успешно выучил слово {word}
-
-        <Button handleClick={() => {setFinal(false);}}>Продолжить</Button>
+      <Modal withOutTimer open={final} handleClose={() => setFinal(false)} title={'Молодец!'}>
+        Ты успешно выучил слово
+        <Button handleClick={() => setFinal(false)}>Продолжить</Button>
       </Modal>
       <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова

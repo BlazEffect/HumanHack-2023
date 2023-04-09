@@ -9,7 +9,7 @@ export default function Modal({ children, title, open, handleClose, withOutTimer
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
-      !withOutTimer ? setTimeout(handleClose, 5000) : '';
+      !withOutTimer ? setTimeout(handleClose, 3000) : '';
     } else {
       document.body.style.overflow = 'auto';
     }
@@ -19,11 +19,8 @@ export default function Modal({ children, title, open, handleClose, withOutTimer
   const classNames = `${open ? '' : 'hidden'} modal-wrapper flex justify-center items-center blured w-full h-full fixed top-0 left-0 right-0 bottom-0`;
 
   return (
-    <CSSTransition
-      nodeRef={modalRef}
-      in={open}
-      timeout={2000}
-      classNames={'show-modal'}
+    <
+
     >
       <div ref={modalRef} className={classNames}>
         <div tabIndex="-1" onBlur={handleClose} className="modal p-4 w-[250px] relative rounded-[15px] bg-white border-[#70B839] border-2 h-[250px]">
@@ -38,6 +35,6 @@ export default function Modal({ children, title, open, handleClose, withOutTimer
           </div>
         </div>
       </div>
-    </CSSTransition>
+    </>
   );
 }

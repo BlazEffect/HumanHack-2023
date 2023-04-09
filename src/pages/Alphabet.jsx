@@ -13,6 +13,7 @@ const Alphabet = () => {
   const [items, setItems] = useState([]);
 
   function nextLevel() {
+    console.log('next')
     setLevel(level + 1);
     saveLevel(level + 1);
   }
