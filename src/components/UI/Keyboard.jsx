@@ -54,19 +54,22 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
     }
 
     //const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
-    const includeLetter = includedLetters[includedLetters.length - 1];
-    const element = letters?.find((letter) => includeLetter.letter === letter[0]);
-    const index = letters?.indexOf(element);
-    const updatedLetters = letters;
-    updatedLetters?.splice(index, 1);
+    if (includedLetters?.length !== 0) {
+      const includeLetter = includedLetters[includedLetters.length - 1];
+      const element = letters?.find((letter) => includeLetter.letter === letter[0]);
+      const index = letters?.indexOf(element);
+      const updatedLetters = letters;
+      updatedLetters?.splice(index, 1);
 
-    for (let i = 0; i < updatedLetters?.length; i++) {
-      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+      for (let i = 0; i < updatedLetters?.length; i++) {
+        letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+      }
+
+      setLettersContent(letterContent);
+      setLetters(updatedLetters);
     }
 
     setLetterBox(letterBoxContent);
-    setLettersContent(letterContent);
-    setLetters(updatedLetters);
 
     if (includedLetters.length === word?.split('').length) {
       const included = includedLetters.map(letter => letter.letter).join('');
@@ -83,10 +86,6 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
       setIncludedLetters([]);
     }
   }, [includedLetters]);
-
-  const setIncludedLetter = (index, arrLetters) => {
-    setIncludedLetters([...includedLetters, { letter: arrLetters[index] }]);
-  };
 
   function playFinalAudio() {
     console.log(audioEl, audioEl.current.play());
