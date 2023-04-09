@@ -13,8 +13,10 @@ const Alphabet = () => {
   const [items, setItems] = useState([]);
 
   function nextLevel() {
-    setLevel(level + 1);
-    saveLevel(level + 1);
+    if (level + 1 < maxLevel) {
+      setLevel(level + 1);
+      saveLevel(level + 1);
+    }
   }
 
   function saveLevel(level) {
