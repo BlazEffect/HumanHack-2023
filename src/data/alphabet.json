@@ -16,43 +16,43 @@
         "word": "кот",
         "imageName": "cat.jpg",
         "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "т": "/src/assets/audio/ж.mp3"
+          "к": "/src/assets/audio/к.mp3",
+          "о": "/src/assets/audio/о.mp3",
+          "т": "/src/assets/audio/т.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/кот.mp3"
       },
       {
         "word": "корова",
         "imageName": "cow.jpg",
         "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "р": "/src/assets/audio/ж.mp3",
-          "в": "/src/assets/audio/ж.mp3",
-          "а": "/src/assets/audio/ж.mp3"
+          "к": "/src/assets/audio/к.mp3",
+          "о": "/src/assets/audio/о.mp3",
+          "р": "/src/assets/audio/р.mp3",
+          "в": "/src/assets/audio/в.mp3",
+          "а": "/src/assets/audio/а.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/корова.mp3"
       },
       {
         "word": "як",
         "imageName": "yak.jpg",
         "speech": {
-          "я": "/src/assets/audio/ё.mp3",
-          "к": "/src/assets/audio/ж.mp3"
+          "я": "/src/assets/audio/я.mp3",
+          "к": "/src/assets/audio/к.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/як.mp3"
       },
       {
         "word": "осёл",
         "imageName": "donkey.jpg",
         "speech": {
-          "о": "/src/assets/audio/ё.mp3",
-          "с": "/src/assets/audio/ж.mp3",
-          "ё": "/src/assets/audio/ж.mp3",
-          "л": "/src/assets/audio/ж.mp3"
+          "о": "/src/assets/audio/о.mp3",
+          "с": "/src/assets/audio/с.mp3",
+          "ё": "/src/assets/audio/ё.mp3",
+          "л": "/src/assets/audio/л.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/осёл.mp3"
       }
     ]
   },
@@ -88,39 +88,39 @@
         "word": "конфеты",
         "imageName": "sweet.png",
         "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "н": "/src/assets/audio/ж.mp3",
-          "ф": "/src/assets/audio/ж.mp3",
-          "е": "/src/assets/audio/ж.mp3",
-          "т": "/src/assets/audio/ж.mp3",
-          "ы": "/src/assets/audio/ж.mp3"
+          "к": "/src/assets/audio/к.mp3",
+          "о": "/src/assets/audio/о.mp3",
+          "н": "/src/assets/audio/н.mp3",
+          "ф": "/src/assets/audio/ф.mp3",
+          "е": "/src/assets/audio/е.mp3",
+          "т": "/src/assets/audio/т.mp3",
+          "ы": "/src/assets/audio/ы.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/конфеты.mp3"
       },
       {
         "word": "картошка",
         "imageName": "potato.png",
         "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "а": "/src/assets/audio/ж.mp3",
-          "р": "/src/assets/audio/ж.mp3",
-          "т": "/src/assets/audio/ж.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "ш": "/src/assets/audio/ж.mp3"
+          "к": "/src/assets/audio/к.mp3",
+          "а": "/src/assets/audio/а.mp3",
+          "р": "/src/assets/audio/р.mp3",
+          "т": "/src/assets/audio/т.mp3",
+          "о": "/src/assets/audio/о.mp3",
+          "ш": "/src/assets/audio/ш.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/картошка.mp3"
       },
       {
         "word": "салат",
         "imageName": "salad.png",
         "speech": {
-          "с": "/src/assets/audio/ё.mp3",
-          "а": "/src/assets/audio/ж.mp3",
-          "л": "/src/assets/audio/ж.mp3",
-          "т": "/src/assets/audio/ж.mp3"
+          "с": "/src/assets/audio/с.mp3",
+          "а": "/src/assets/audio/а.mp3",
+          "л": "/src/assets/audio/л.mp3",
+          "т": "/src/assets/audio/т.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/салат.mp3"
       }
     ]
   },
@@ -132,53 +132,53 @@
         "word": "малина",
         "imageName": "raspberry.png",
         "speech": {
-          "м": "/src/assets/audio/ё.mp3",
-          "а": "/src/assets/audio/ж.mp3",
-          "л": "/src/assets/audio/ж.mp3",
-          "и": "/src/assets/audio/ж.mp3",
-          "н": "/src/assets/audio/ж.mp3"
+          "м": "/src/assets/audio/м.mp3",
+          "а": "/src/assets/audio/а.mp3",
+          "л": "/src/assets/audio/л.mp3",
+          "и": "/src/assets/audio/и.mp3",
+          "н": "/src/assets/audio/н.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/малина.mp3"
       },
       {
         "word": "клубника",
         "imageName": "strawberries.png",
         "speech": {
-          "к": "/src/assets/audio/ё.mp3",
-          "л": "/src/assets/audio/ж.mp3",
-          "у": "/src/assets/audio/ж.mp3",
-          "б": "/src/assets/audio/ж.mp3",
-          "н": "/src/assets/audio/ж.mp3",
-          "и": "/src/assets/audio/ж.mp3",
-          "а": "/src/assets/audio/ж.mp3"
+          "к": "/src/assets/audio/к.mp3",
+          "л": "/src/assets/audio/л.mp3",
+          "у": "/src/assets/audio/у.mp3",
+          "б": "/src/assets/audio/б.mp3",
+          "н": "/src/assets/audio/н.mp3",
+          "и": "/src/assets/audio/и.mp3",
+          "а": "/src/assets/audio/к.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/клубника.mp3"
       },
       {
         "word": "черника",
         "imageName": "blueberries.png",
         "speech": {
-          "ч": "/src/assets/audio/ё.mp3",
-          "е": "/src/assets/audio/ж.mp3",
-          "р": "/src/assets/audio/ж.mp3",
-          "н": "/src/assets/audio/ж.mp3",
-          "и": "/src/assets/audio/ж.mp3",
-          "к": "/src/assets/audio/ж.mp3",
-          "а": "/src/assets/audio/ж.mp3"
+          "ч": "/src/assets/audio/ч.mp3",
+          "е": "/src/assets/audio/е.mp3",
+          "р": "/src/assets/audio/р.mp3",
+          "н": "/src/assets/audio/н.mp3",
+          "и": "/src/assets/audio/и.mp3",
+          "к": "/src/assets/audio/к.mp3",
+          "а": "/src/assets/audio/а.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/черника.mp3"
       },
       {
         "word": "яблоко",
         "imageName": "apple.png",
         "speech": {
-          "я": "/src/assets/audio/ё.mp3",
-          "б": "/src/assets/audio/ж.mp3",
-          "л": "/src/assets/audio/ж.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "к": "/src/assets/audio/ж.mp3"
+          "я": "/src/assets/audio/я.mp3",
+          "б": "/src/assets/audio/б.mp3",
+          "л": "/src/assets/audio/л.mp3",
+          "о": "/src/assets/audio/о.mp3",
+          "к": "/src/assets/audio/к.mp3"
         },
-        "final": "/src/assets/audio/ёж.mp3"
+        "final": "/src/assets/audio/яблоко.mp3"
       }
     ]
   }
