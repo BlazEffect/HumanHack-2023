@@ -8,7 +8,7 @@ import ImageCard from "../components/UI/ImageCard.jsx";
 import Keyboard from "../components/UI/MathPage/Keyboard.jsx";
 
 const MathPage = () => {
-  const [level, setLevel] = useState(+localStorage.getItem('level-math') ?? 1);
+  const [level, setLevel] = useState(1);
   const [sign, setSign] = useState();
   const [maxLevel, setMaxLevel] = useState(1);
   const [items, setItems] = useState([]);
@@ -34,7 +34,7 @@ const MathPage = () => {
   }
 
   function saveSection(sectionName) {
-    localStorage.setItem('section', sectionName);
+    localStorage.setItem('section-math', sectionName);
   }
 
   useEffect(() => {
