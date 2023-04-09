@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Letter from './Letter.jsx';
 import LetterCell from './LetterCell.jsx';
 import Modal from '../Modal.jsx';
+import Button from '../Button.jsx';
 
-const Keyboard = ({ word, audio, finalAudio }) => {
+const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
   const [countLetters, setCountLetters] = useState(0);
   const [letters, setLetters] = useState([]);
   const [lettersContent, setLettersContent] = useState([]);
@@ -15,30 +16,33 @@ const Keyboard = ({ word, audio, finalAudio }) => {
 
   const audioEl = useRef(null);
 
+  function updateLetters(word) {
+    let lettersCount = word?.length
+    let letterContent = [];
+
+    if (lettersCount === 2) {
+      [word[0], word[1]] = [word[1], word[0]];
+    } else {
+      shuffle(word);
+    }
+    for (let i = 0; i < lettersCount; i++) {
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={word[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+    }
+    setCountLetters(lettersCount);
+    setLettersContent(letterContent);
+    setLetters(word);
+  }
+
   useEffect(() => {
     let letters = word?.split('');
     let letterBoxContent = [];
-    let letterContent = [];
-
-    if (letters?.length === 2) {
-      [letters[0], letters[1]] = [letters[1], letters[0]];
-    } else {
-      shuffle(letters);
-    }
 
     for (let i = 0; i < letters?.length; i++) {
       letterBoxContent.push(<LetterCell key={i} letter={includedLetters[i]?.letter}></LetterCell>);
     }
-
-    for (let i = 0; i < letters?.length; i++) {
-      letterContent.push(<Letter audio={audio} final={finalAudio} letter={letters[i]} key={i} index={i}
-                                 setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
-    }
-
-    setCountLetters(letters?.length);
     setLetterBox(letterBoxContent);
-    setLettersContent(letterContent);
-    setLetters(letters);
+
+    updateLetters(letters);
   }, [word]);
 
   useEffect(() => {
@@ -53,8 +57,7 @@ const Keyboard = ({ word, audio, finalAudio }) => {
     const updatedLetters = letters?.filter((letter) => !includeLetter.includes(letter[0]));
 
     for (let i = 0; i < updatedLetters?.length; i++) {
-      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i}
-                                 setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
+      letterContent.push(<Letter audio={audio} final={finalAudio} letter={updatedLetters[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
     }
 
     setLetterBox(letterBoxContent);
@@ -69,13 +72,15 @@ const Keyboard = ({ word, audio, finalAudio }) => {
         setFinal(true);
       } else {
         setTryAgain(true);
+
+        updateLetters(word?.split(''));
       }
 
+      setIncludedLetters([]);
     }
   }, [includedLetters]);
 
   const setIncludedLetter = (index, arrLetters) => {
-    console.log(arrLetters);
     setIncludedLetters([...includedLetters, { letter: arrLetters[index] }]);
   };
 
@@ -96,9 +101,7 @@ const Keyboard = ({ word, audio, finalAudio }) => {
         {letterBox}
       </div>
 
-      <div
-        className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]"
-      >
+      <div className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]">
         {lettersContent}
       </div>
 
@@ -107,6 +110,13 @@ const Keyboard = ({ word, audio, finalAudio }) => {
       </audio>
       <Modal open={final} handleClose={() => setFinal(false)} title={'Молодец!'}>
         Ты успешно выучил слово {word}
+
+        <Button
+          handleClick={() => {
+            setFinal(false);
+            setLevel();
+          }
+          }>Продолжить</Button>
       </Modal>
       <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова

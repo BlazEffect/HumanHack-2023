@@ -9,11 +9,6 @@ const Letter = ({ letter, audio, setIncludedLetters, includedLetters }) => {
     audioEl.current.play();
   };
 
-  const playAudio = () => {
-    audioEl.current.volume = 0.1;
-    audioEl.current.play();
-  };
-
   return (
     <>
       <div
