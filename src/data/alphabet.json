@@ -1,7 +1,7 @@
 [
   {
     "name": "Animals",
-    "maxLevels": 5,
+    "maxLevels": 12,
     "items": [
       {
         "word": "ёж",
@@ -53,36 +53,6 @@
           "л": "/src/assets/audio/л.mp3"
         },
         "final": "/src/assets/audio/осёл.mp3"
-      }
-    ]
-  },
-  {
-    "name": "Food",
-    "maxLevels": 3,
-    "items": [
-      {
-        "word": "чипсы",
-        "imageName": "lays.png",
-        "speech": {
-          "ч": "/src/assets/audio/ё.mp3",
-          "и": "/src/assets/audio/ж.mp3",
-          "п": "/src/assets/audio/ж.mp3",
-          "с": "/src/assets/audio/ж.mp3",
-          "ы": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
-      },
-      {
-        "word": "дошик",
-        "imageName": "doshik.png",
-        "speech": {
-          "д": "/src/assets/audio/ё.mp3",
-          "о": "/src/assets/audio/ж.mp3",
-          "ш": "/src/assets/audio/ж.mp3",
-          "и": "/src/assets/audio/ж.mp3",
-          "к": "/src/assets/audio/ж.mp3"
-        },
-        "final": "/src/assets/audio/ёж.mp3"
       },
       {
         "word": "конфеты",
@@ -121,13 +91,7 @@
           "т": "/src/assets/audio/т.mp3"
         },
         "final": "/src/assets/audio/салат.mp3"
-      }
-    ]
-  },
-  {
-    "name": "Berries",
-    "maxLevels": 4,
-    "items": [
+      },
       {
         "word": "малина",
         "imageName": "raspberry.png",
