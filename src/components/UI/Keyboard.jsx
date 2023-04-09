@@ -101,11 +101,11 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
 
   return (
     <div>
-      <div className="bg-white w-max m-auto flex justify-center flex-wrap gap-1.5 py-[16px] px-[10px] rounded-[10px]">
+      <div className="bg-white w-max  max-w-full m-auto flex justify-center flex-wrap gap-1.5 py-[16px] px-[10px] rounded-[10px]">
         {letterBox}
       </div>
 
-      <div className="letters-wrapper w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]">
+      <div className="letters-wrapper max-w-full w-max m-auto mt-[15px] flex flex-wrap gap-1.5 justify-center text-center py-[16px] px-[10px] rounded-[10px]">
         {lettersContent}
       </div>
 
