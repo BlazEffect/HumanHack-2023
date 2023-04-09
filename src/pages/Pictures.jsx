@@ -15,11 +15,11 @@ export default function Pictures() {
         <div className="flex flex-col text-[18px] text-center">
           <Title>Твои рисунки</Title>
           {pictures.map((picture, i) => (
-            <div key={i} className="flex justify-between items-center m-2 border-black border-2">
-              <span className="text-left pl-2">{`${
+            <div key={i} className="justify-center flex-col flex items-center m-2 border-[#70B839] border-2">
+              <span className="text-left text-lg pl-2">{`${
                 i === 0 ? 'Твой первый рисунок' : 'Рисунок ' + ++i
               } `}</span>
-              <img className="max-w-[250px]" src={picture} alt={'Рисунок'}/>
+              <img className="max-w-[250px] my-2" src={picture} alt={'Рисунок'}/>
             </div>
           ))}
         </div>

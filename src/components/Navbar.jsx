@@ -82,19 +82,19 @@ export default function Navbar() {
           'absolute z-10 top-10 bottom-48 bg-[#70B839] opacity-70 w-full nav-height my-node'
         }>
           <ul className="flex menu-opened transition-all items-center flex-col h-full justify-center">
-            <li className="text-white font-bold uppercase text-[20px] menu-item">
+            <li className="text-white font-bold uppercase text-[32px] menu-item">
               <Link to="/">Главная</Link>
             </li>
-            <li className="mt-[20px] text-white font-bold uppercase text-[20px] menu-item">
+            <li className="mt-[20px] text-white font-bold uppercase text-[32px] menu-item">
               <Link to="/math">Математика</Link>
             </li>
-            <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
+            <li className="mt-[20px] font-bold text-white uppercase text-[32px] menu-item">
               <Link to="/alphabet">Правописание</Link>
             </li>
-            <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
+            <li className="mt-[20px] font-bold text-white uppercase text-[32px] menu-item">
               <Link to="/draw">Рисование</Link>
             </li>
-            <li className="mt-[20px] font-bold text-white uppercase text-[20px] menu-item">
+            <li className="mt-[20px] font-bold text-white uppercase text-[32px] menu-item">
               <Link to="/pictures">Рисунки</Link>
             </li>
           </ul>

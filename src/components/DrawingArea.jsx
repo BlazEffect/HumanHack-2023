@@ -8,10 +8,10 @@ const styles = {
   }
 };
 export default function DrawingArea() {
-  const [customWidth, setCustomWidth] = useState(window.screen.width);
+  const [customWidth, setCustomWidth] = useState(window.screen.width - 15 - 4);
   useEffect(() => {
     window.addEventListener('resize', () => {
-      setCustomWidth(window.screen.width);
+      setCustomWidth(window.screen.width - 15 - 4);
     });
 
     const canvas = document.querySelector('#sketchpad');

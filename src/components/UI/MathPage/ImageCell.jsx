@@ -14,7 +14,7 @@ export default function ImageCell({ image }) {
         ref={imageRef}
         className="bg-[#ccc] w-28 h-28 flex items-center justify-center"
       >
-        <img src={"/src/assets/img/math/" + image?.path} alt="" />
+        <img src={"/math/" + image?.path} alt="" />
       </div>
     </CSSTransition>
   );

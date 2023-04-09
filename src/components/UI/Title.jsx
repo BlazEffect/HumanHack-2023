@@ -7,7 +7,7 @@ export default function Title({ children, className }) {
     <h2
       className={classNames(
         className,
-        'text-[24px] text-white uppercase mx-auto text-center font-[900] title'
+        'text-[32px] px-1 text-white uppercase mx-auto text-center font-[900] title'
       )}
     >
       {children}

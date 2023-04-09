@@ -1,7 +1,6 @@
 import Title from './UI/Title';
 import { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import Button from './Button';
 
 import cross_cool from '../assets/images/cross_cool.png';
 
@@ -27,14 +26,14 @@ export default function Modal({ children, title, open, handleClose, withOutTimer
       classNames={'show-modal'}
     >
       <div ref={modalRef} className={classNames}>
-        <div tabIndex="-1" onBlur={handleClose} className="modal p-4 w-[350px] relative rounded-[15px] bg-white border-[#70B839] border-2 h-[350px]">
+        <div tabIndex="-1" onBlur={handleClose} className="modal p-4 w-[250px] relative rounded-[15px] bg-white border-[#70B839] border-2 h-[250px]">
           <div className="text-center">
             <Title className="!text-[#70B839]">{title}</Title>
             <div className="absolute cursor-pointer right-4 top-2 text-[24px]" onClick={handleClose}>
               <img className="w-4 h-4" src={cross_cool} alt=""/>
             </div>
           </div>
-          <div>
+          <div className='text-center text-[24px] font-[300]'>
             {children}
           </div>
         </div>
