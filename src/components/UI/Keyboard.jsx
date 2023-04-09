@@ -16,8 +16,8 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
 
   const audioEl = useRef(null);
 
-  function updateLetters(word) {
-    let lettersCount = word?.length
+  function updateLetters(word, includedLetters) {
+    let lettersCount = word?.length;
     let letterContent = [];
 
     if (lettersCount === 2) {
@@ -25,6 +25,7 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
     } else {
       shuffle(word);
     }
+
     for (let i = 0; i < lettersCount; i++) {
       letterContent.push(<Letter audio={audio} final={finalAudio} letter={word[i]} key={i} index={i} setIncludedLetters={setIncludedLetters} includedLetters={includedLetters}/>);
     }
@@ -42,7 +43,7 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
     }
     setLetterBox(letterBoxContent);
 
-    updateLetters(letters);
+    updateLetters(letters, []);
   }, [word]);
 
   useEffect(() => {
@@ -74,16 +75,16 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
     if (includedLetters.length === word?.split('').length) {
       const included = includedLetters.map(letter => letter.letter).join('');
 
+      setIncludedLetters([]);
+
       if (included === word) {
         /* playFinalAudio(); -> doesnt work??? TODO TODO  */
         setFinal(true);
       } else {
         setTryAgain(true);
 
-        updateLetters(word?.split(''));
+        updateLetters(word?.split(''), []);
       }
-
-      setIncludedLetters([]);
     }
   }, [includedLetters]);
 
