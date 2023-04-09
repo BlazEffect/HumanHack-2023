@@ -115,7 +115,7 @@ const Keyboard = ({ word, audio, finalAudio, setLevel }) => {
       <Modal open={final} handleClose={() => {setFinal(false); setLevel();}} title={'Молодец!'}>
         Ты успешно выучил слово {word}
 
-        <Button handleClick={() => {setFinal(false); setLevel();}}>Продолжить</Button>
+        <Button handleClick={() => {setFinal(false);}}>Продолжить</Button>
       </Modal>
       <Modal open={tryAgain} handleClose={() => setTryAgain(false)} title={'Молодец!'}>
         У тебя почти получилось, попытайся снова

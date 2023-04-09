@@ -13,10 +13,10 @@ export default function Main() {
       <Title>Выберите направление</Title>
       <div className="p-[22px]">
         <swiper-container slides-per-view="1" navigation="true" pagination="true">
-          <SwiperItem path={math} to="/">Математика</SwiperItem>
+          <SwiperItem path={math} to="/math">Математика</SwiperItem>
           <SwiperItem path={or} to="/alphabet">Правописание</SwiperItem>
           <SwiperItem path={izo} to="/draw">Рисование</SwiperItem>
-          <SwiperItem path={images} to="/draw">Рисунки</SwiperItem>
+          <SwiperItem path={images} to="/pictures">Рисунки</SwiperItem>
         </swiper-container>
       </div>
     </Layout>
