@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Letter = ({ letter, audio, setIncludedLetters, includedLetters }) => {
-  const audioEl = useRef(null);
-
   const clickCard = () => {
+    const track = new URL(audio[letter], import.meta.url);
+    const audioTrack = new Audio(track);
+    audioTrack.volume = 1
+    audioTrack.play()
     setIncludedLetters([...includedLetters, { letter: letter }]);
-    audioEl.current.volume = 0.1;
-    audioEl.current.play();
   };
 
   return (
@@ -17,16 +17,8 @@ const Letter = ({ letter, audio, setIncludedLetters, includedLetters }) => {
       >
         {letter}
       </div>
-      {
-        Object.keys(audio).map(item => item === letter && (
-          <audio ref={audioEl} key={item}>
-            <source
-              /* TODO: replace src */
-              src={audio[item]}
-              type="audio/mpeg"
-            />
-          </audio>))
-      }
+      
+      
     </>
   );
 };
