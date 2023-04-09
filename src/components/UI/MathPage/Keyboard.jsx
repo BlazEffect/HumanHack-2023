@@ -4,7 +4,7 @@ import ImageCell from "./ImageCell.jsx";
 import Modal from "../../Modal.jsx";
 import Button from "../../Button.jsx";
 
-const Keyboard = ({ images, answer }) => {
+const Keyboard = ({ images, answer, setLevel }) => {
   const [includedImage, setIncludedImage] = useState();
   const [imageContent, setImageContent] = useState();
 
@@ -53,10 +53,11 @@ const Keyboard = ({ images, answer }) => {
       </div>
       <Modal
         open={final}
-        handleClose={() => setFinal(false)}
+        handleClose={() => setLevel()}
         title={"Молодец!"}
       >
         Ты успешно прошёл пример
+        <Button handleClick={() => {setFinal(false); setIncludedImage('')}}>Продолжить</Button>
       </Modal>
       <Modal
         open={tryAgain}

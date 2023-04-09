@@ -8,19 +8,38 @@ import ImageCard from "../components/UI/ImageCard.jsx";
 import Keyboard from "../components/UI/MathPage/Keyboard.jsx";
 
 const MathPage = () => {
-  const [level, setLevel] = useState(1);
+  const [level, setLevel] = useState(+localStorage.getItem('level-math') ?? 1);
   const [sign, setSign] = useState();
   const [maxLevel, setMaxLevel] = useState(1);
   const [items, setItems] = useState([]);
   const [answer, setAnswer] = useState();
+  const [final, setFinal] = useState();
 
   function saveSection(sectionName) {
     localStorage.setItem("section-math", sectionName);
   }
 
+  function nextLevel() {
+    if(+level + 1 > maxLevel) {
+      setFinal(true);
+      console.log(level + 1, maxLevel)
+      return;
+    }
+    setLevel(+level + 1);
+    saveLevel(+level + 1);
+  }
+
+  function saveLevel(level) {
+    localStorage.setItem('level-math', level);
+  }
+
+  function saveSection(sectionName) {
+    localStorage.setItem('section', sectionName);
+  }
+
   useEffect(() => {
     const savedSection = localStorage.getItem("section-math");
-
+    const savedLevel = localStorage.getItem('level-math')
     if (!savedSection) {
       const number = Math.floor(Math.random() * data.length);
       const section = data[number];
@@ -28,7 +47,6 @@ const MathPage = () => {
       setMaxLevel(section.maxLevels);
       saveSection(section.name);
 
-      console.log(section);
     } else {
       const sectionIndex = data
         .map((section) => {
@@ -50,6 +68,9 @@ const MathPage = () => {
         setAnswer(images[0].amount - images[1].amount)
       }
 
+    }
+    if (savedLevel) {
+      setLevel(parseInt(savedLevel));
     }
   });
 
@@ -73,7 +94,7 @@ const MathPage = () => {
               </React.Fragment>
           ))}
         </div>
-        <Keyboard answer={answer} images={items.items?.[level - 1].imagesPrimer} />
+        <Keyboard setLevel={nextLevel} answer={answer} images={items.items?.[level - 1].imagesPrimer} />
       </Card>
     </Layout>
   );

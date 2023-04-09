@@ -1,7 +1,7 @@
 [
   {
     "name": "cats",
-    "maxLevels": 2,
+    "maxLevels": 6,
     "items": [
       {
         "images": [
@@ -46,13 +46,7 @@
             "amount": 2
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "fruit",
-    "maxLevels": 2,
-    "items": [
+      },
       {
         "images": [
           {
@@ -96,13 +90,7 @@
             "amount": 6
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "birds",
-    "maxLevels": 2,
-    "items": [
+      },
       {
         "images": [
           {
@@ -149,5 +137,6 @@
       }
     ]
   }
+ 
 
 ]
